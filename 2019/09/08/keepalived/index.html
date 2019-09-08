@@ -5,19 +5,20 @@
   
 
   
-  <title>Hello World | Hexo</title>
+  <title>keepalived | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="keepalived服务提供ip资源的高可用 vrrp（虚拟路由冗余协议Virtual Router Redundancy Protocol）：在节点（主机）出现故障时，实现ip地址切换到备用节点，保证ip资源的高可用。 Failover：故障切换，即某资源的主节点故障时，将资源转移至其它节点的操作；Failback：故障移回，即某资源的主节点故障后重新修改上线后，将转移至其它节点的资源重新切回；">
+<meta name="keywords" content="IAAS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/08/18/hello-world/index.html">
+<meta property="og:title" content="keepalived">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/keepalived/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="keepalived服务提供ip资源的高可用 vrrp（虚拟路由冗余协议Virtual Router Redundancy Protocol）：在节点（主机）出现故障时，实现ip地址切换到备用节点，保证ip资源的高可用。 Failover：故障切换，即某资源的主节点故障时，将资源转移至其它节点的操作；Failback：故障移回，即某资源的主节点故障后重新修改上线后，将转移至其它节点的资源重新切回；">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-18T03:57:31.203Z">
+<meta property="og:updated_time" content="2019-09-08T08:14:23.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="keepalived">
+<meta name="twitter:description" content="keepalived服务提供ip资源的高可用 vrrp（虚拟路由冗余协议Virtual Router Redundancy Protocol）：在节点（主机）出现故障时，实现ip地址切换到备用节点，保证ip资源的高可用。 Failover：故障切换，即某资源的主节点故障时，将资源转移至其它节点的操作；Failback：故障移回，即某资源的主节点故障后重新修改上线后，将转移至其它节点的资源重新切回；">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-keepalived" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/18/hello-world/" class="article-date">
-  <time datetime="2019-08-18T03:57:31.203Z" itemprop="datePublished">2019-08-18</time>
+    <a href="/2019/09/08/keepalived/" class="article-date">
+  <time datetime="2019-09-08T08:00:28.000Z" itemprop="datePublished">2019-09-08</time>
 </a>
     
   </div>
@@ -78,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      keepalived
     </h1>
   
 
@@ -86,41 +87,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>keepalived服务提供ip资源的高可用</p>
+<p>vrrp（虚拟路由冗余协议Virtual Router Redundancy Protocol）：在节点（主机）出现故障时，实现ip地址切换到备用节点，保证ip资源的高可用。</p>
+<p>Failover：故障切换，即某资源的主节点故障时，将资源转移至其它节点的操作；<br>Failback：故障移回，即某资源的主节点故障后重新修改上线后，将转移至其它节点的资源重新切回；</p>
+<p>虚拟路由器：Virtual Router，对应与配置文件中/etc/keepalived/keepalived.conf中的virtual_ipaddress。生产环境中一个director主机上通常会有多个ip，对外为evip，接收用户请求，对内为newvip，将用户的请求通过newvip发送给后端提供服务的主机RS（Real Server）。在配置虚拟路由ip时，evip与newvip需要配置在同一个virtual_ipaddress组内，实现在master主机出现故障时，evip转向backup备用主机时，newvip也同时转向backup备用主机。不然newvip还停留在master主机上，转向后端主机的请求将会无法到达。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/hello-world/" data-id="ck0apcevz0000gg1o4xn0qm4a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/keepalived/" data-id="ck0apcew40001gg1oy267r7di" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IAAS/">IAAS</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/09/08/keepalived/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          keepalived
-        
-      </div>
-    </a>
   
+    <a href="/2019/08/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
 </nav>
 

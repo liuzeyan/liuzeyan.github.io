@@ -62,6 +62,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-keepalived" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/08/keepalived/" class="article-date">
+  <time datetime="2019-09-08T08:00:28.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/keepalived/">keepalived</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>keepalived服务提供ip资源的高可用</p>
+<p>vrrp（虚拟路由冗余协议Virtual Router Redundancy Protocol）：在节点（主机）出现故障时，实现ip地址切换到备用节点，保证ip资源的高可用。</p>
+<p>Failover：故障切换，即某资源的主节点故障时，将资源转移至其它节点的操作；<br>Failback：故障移回，即某资源的主节点故障后重新修改上线后，将转移至其它节点的资源重新切回；</p>
+<p>虚拟路由器：Virtual Router，对应与配置文件中/etc/keepalived/keepalived.conf中的virtual_ipaddress。生产环境中一个director主机上通常会有多个ip，对外为evip，接收用户请求，对内为newvip，将用户的请求通过newvip发送给后端提供服务的主机RS（Real Server）。在配置虚拟路由ip时，evip与newvip需要配置在同一个virtual_ipaddress组内，实现在master主机出现故障时，evip转向backup备用主机时，newvip也同时转向backup备用主机。不然newvip还停留在master主机上，转向后端主机的请求将会无法到达。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/08/keepalived/" data-id="ck0apcew40001gg1oy267r7di" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IAAS/">IAAS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/18/hello-world/" class="article-date">
@@ -101,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/hello-world/" data-id="ck0aokspa0000gk1oqgj3i1s2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/hello-world/" data-id="ck0apcevz0000gg1o4xn0qm4a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,15 +163,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IAAS/">IAAS</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IAAS/" style="font-size: 10px;">IAAS</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
     </div>
   </div>
 
@@ -140,6 +196,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/09/08/keepalived/">keepalived</a>
+          </li>
         
           <li>
             <a href="/2019/08/18/hello-world/">Hello World</a>
